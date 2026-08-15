@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AquaNex | Comments</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2fbff;
+            color: #073b4c;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px #00000012;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #075985;
+        }
+
+        .logo span {
+            color: #00a6d6;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #345563;
+
+            padding: 8px 10px;
+
+            font-size: 14px;
+
+            border-radius: 20px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #e2f8ff;
+            color: #009ac4;
+        }
+
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+
+            padding: 70px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #023047,
+                    #0077b6,
+                    #00b4d8
+                );
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: #dffaff;
+            font-size: 17px;
+        }
+
+
+        /* COMMENT SECTION */
+
+        .container {
+            max-width: 900px;
+
+            margin: 55px auto;
+
+            padding: 0 25px;
+        }
+
+        .comment-box {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #dceff5;
+
+            box-shadow:
+                0 10px 30px #0077b612;
+        }
+
+        .comment-box h2 {
+            color: #0077b6;
+
+            margin-bottom: 8px;
+        }
+
+        .comment-box .intro {
+            color: #6b858e;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* FORM */
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #174d60;
+
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #cce8ef;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #00a6d6;
+        }
+
+        textarea {
+            height: 130px;
+
+            resize: vertical;
+        }
+
+
+        /* BUTTON */
+
+        button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0077b6,
+                    #00b4d8
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+
+        /* SUCCESS MESSAGE */
+
+        #success {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            background: #e6faff;
+
+            color: #0077a8;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+
+        /* TEAM */
+
+        .team {
+            margin-top: 45px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .member {
+            background: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            border: 1px solid #dceff5;
+
+            box-shadow:
+                0 8px 25px #0077b612;
+        }
+
+        .member-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #e3faff;
+
+            font-size: 28px;
+        }
+
+        .member h3 {
+            color: #075985;
+
+            margin-bottom: 5px;
+        }
+
+        .member p {
+            color: #6b858e;
+
+            font-size: 14px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 70px;
+
+            background: #023047;
+
+            color: #bcebf4;
+
+            padding: 40px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 25px;
+        }
+
+        footer h3 {
+            color: white;
+
+            margin-bottom: 7px;
+        }
+
+        footer h3 span {
+            color: #7eeeff;
+        }
+
+        footer h4 {
+            color: #7eeeff;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .header h1 {
+                font-size: 38px;
+            }
+
+            .team {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================
+         NAVBAR
+    ====================== -->
+
+    <nav>
+
+        <div class="logo">
+            Aqua<span>Nex</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="homepage.html">
+                Home
+            </a>
+
+            <a href="Introduction.html">
+                Aquaculture
+            </a>
+
+            <a href="Description1.html">
+                Water Quality
+            </a>
+
+            <a href="Calculation.html">
+                Calculation
+            </a>
+
+            <a href="Form.html">
+                Farm Form
+            </a>
+
+            <a href="Comment.html" class="active">
+                Comments
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================
+         HEADER
+    ====================== -->
+
+    <section class="header">
+
+        <h1>
+            Comments & Feedback
+        </h1>
+
+        <p>
+            Share your thoughts about AquaNex
+        </p>
+
+    </section>
+
+
+    <!-- =====================
+         COMMENT FORM
+    ====================== -->
+
+    <main class="container">
+
+        <div class="comment-box">
+
+            <h2>
+                💬 Leave a Comment
+            </h2>
+
+            <p class="intro">
+                Your feedback helps us improve AquaNex
+                and make aquaculture information easier
+                for everyone.
+            </p>
+
+
+            <form id="commentForm">
+
+
+                <div class="field">
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Rating
+                    </label>
+
+                    <select required>
+
+                        <option value="">
+                            Select rating
+                        </option>
+
+                        <option>
+                            ⭐⭐⭐⭐⭐ Excellent
+                        </option>
+
+                        <option>
+                            ⭐⭐⭐⭐ Very Good
+                        </option>
+
+                        <option>
+                            ⭐⭐⭐ Good
+                        </option>
+
+                        <option>
+                            ⭐⭐ Needs Improvement
+                        </option>
+
+                        <option>
+                            ⭐ Poor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Your Comment
+                    </label>
+
+                    <textarea
+                        placeholder="Write your comment here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Submit Comment
+                </button>
+
+
+                <div id="success">
+                    ✓ Thank you! Your feedback has been submitted.
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- =====================
+             TEAM
+        ====================== -->
+
+        <div class="team">
+
+            <div class="member">
+
+                <div class="member-icon">
+                    👨‍💻
+                </div>
+
+                <h3>
+                    Md. Abu Jahid Jim
+                </h3>
+
+                <p>
+                    Blue Dragon Team Member
+                </p>
+
+            </div>
+
+
+            <div class="member">
+
+                <div class="member-icon">
+                    👩‍💻
+                </div>
+
+                <h3>
+                    Mariam Akter Bristy
+                </h3>
+
+                <p>
+                    Blue Dragon Team Member
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================
+         FOOTER
+    ====================== -->
+
+    <footer>
+
+        <div>
+
+            <h3>
+                Aqua<span>Nex</span>
+            </h3>
+
+            <p>
+                Modern Aquaculture Portal
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                BLUE DRAGON
+            </h4>
+
+            <p>
+                Md. Abu Jahid Jim
+            </p>
+
+            <p>
+                Mariam Akter Bristy
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                ©️ 2026 AquaNex
+            </p>
+
+            <p>
+                Smart Water • Healthy Aquaculture
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================
+         JAVASCRIPT
+    ====================== -->
+
+    <script>
+
+        document
+            .getElementById("commentForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                document
+                    .getElementById("success")
+                    .style.display = "block";
+
+                this.reset();
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

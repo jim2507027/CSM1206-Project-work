@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AquaNex | Farm Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f2fbff;
+            margin: 0;
+            color: #073b4c;
+        }
+
+        .menu {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #073b4c;
+            margin: 8px;
+        }
+
+        .header {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .form-box {
+            background: white;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #0002;
+        }
+
+        .form-box h2 {
+            color: #0077b6;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #b9dce5;
+            border-radius: 7px;
+        }
+
+        input[type="range"] {
+            padding: 0;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .full {
+            grid-column: 1 / 3;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #e5f9ff;
+            color: #0077b6;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #023047;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            color: #7eeeff;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="menu">
+
+    <div class="logo">AquaNex</div>
+
+    <a href="homepage.html">Home</a>
+    <a href="Introduction.html">Aquaculture</a>
+    <a href="Description1.html">Water Quality</a>
+    <a href="Calculation.html">Calculation</a>
+    <a href="Form.html">Form</a>
+    <a href="Comment.html">Comments</a>
+
+</div>
+
+
+<div class="header">
+
+    <h1>Farm Information</h1>
+
+    <p>Enter your aquaculture farm information</p>
+
+</div>
+
+
+<div class="form-box">
+
+    <h2>🐟 Aquaculture Farm Form</h2>
+
+    <p>Fill in the information about your farm.</p>
+
+
+    <form id="farmForm">
+
+        <div class="form">
+
+
+            <div>
+
+                <label>Farmer Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter name"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Farm Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter farm name"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Farm Location</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter location"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Fish Species</label>
+
+                <select>
+
+                    <option>Select species</option>
+                    <option>Tilapia</option>
+                    <option>Rohu</option>
+                    <option>Catla</option>
+                    <option>Pangasius</option>
+                    <option>Carp</option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>Culture System</label>
+
+                <select>
+
+                    <option>Select system</option>
+                    <option>Pond Culture</option>
+                    <option>Tank Culture</option>
+                    <option>Cage Culture</option>
+                    <option>RAS</option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>Pond Area (m²)</label>
+
+                <input
+                    type="number"
+                    placeholder="Enter area"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Water Source</label>
+
+                <select>
+
+                    <option>Select source</option>
+                    <option>Rain Water</option>
+                    <option>River</option>
+                    <option>Tube Well</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RANGE -->
+
+            <div>
+
+                <label>
+                    Stocking Density:
+                    <span id="rangeValue">5</span> fish/m²
+                </label>
+
+                <input
+                    type="range"
+                    id="density"
+                    min="1"
+                    max="20"
+                    value="5"
+                    oninput="showRange()"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Water Quality</label>
+
+                <select>
+
+                    <option>Good</option>
+                    <option>Moderate</option>
+                    <option>Needs Attention</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="full">
+
+                <label>Additional Information</label>
+
+                <textarea
+                    placeholder="Write something..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="submitForm()"
+        >
+            Submit Farm Information
+        </button>
+
+
+        <div id="message">
+
+            ✓ Farm information submitted successfully!
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<footer>
+
+    <h3>AquaNex</h3>
+
+    <p>Modern Aquaculture Portal</p>
+
+    <p>Team: Blue Dragon</p>
+
+    <p>
+        Md. Abu Jahid Jim & Mariam Akter Bristy
+    </p>
+
+    <p>©️ 2026 AquaNex</p>
+
+</footer>
+
+
+<script>
+
+function showRange() {
+
+    let value =
+        document.getElementById("density").value;
+
+    document.getElementById("rangeValue").innerHTML = value;
+
+}
+
+
+function submitForm() {
+
+    let name =
+        document.getElementById("name").value;
+
+    let phone =
+        document.getElementById("phone").value;
+
+
+    if (name == "" || phone == "") {
+
+        alert("Please enter your name and phone number.");
+
+    }
+
+    else {
+
+        document.getElementById("message").style.display = "block";
+
+        document.getElementById("farmForm").reset();
+
+        document.getElementById("rangeValue").innerHTML = "5";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

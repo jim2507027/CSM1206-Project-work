@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaNex | Aquaculture</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2fbff;
+            color: #073b4c;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px #00000012;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #075985;
+        }
+
+        .logo span {
+            color: #00a6d6;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #345563;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #009ac4;
+        }
+
+
+        /* PAGE HEADER */
+
+        .page-header {
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #023047,
+                    #0077b6,
+                    #00b4d8
+                );
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            color: #dffaff;
+            font-size: 17px;
+        }
+
+
+        /* CONTENT */
+
+        .content {
+
+            max-width: 1100px;
+
+            margin: 50px auto;
+
+            padding: 0 25px;
+        }
+
+        .content h2 {
+
+            color: #0077b6;
+
+            margin-bottom: 15px;
+
+            font-size: 28px;
+        }
+
+        .content p {
+
+            color: #607d88;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* INFORMATION CARDS */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin: 35px 0;
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #dceff5;
+
+            box-shadow:
+                0 8px 25px #0077b612;
+        }
+
+        .card h3 {
+
+            color: #075985;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+
+            font-size: 14px;
+
+            margin-bottom: 0;
+        }
+
+
+        /* LIST */
+
+        .list {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            margin-top: 25px;
+
+            box-shadow:
+                0 8px 25px #0077b612;
+        }
+
+        .list li {
+
+            margin: 12px 0;
+
+            color: #607d88;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            margin-top: 70px;
+
+            background: #023047;
+
+            color: #bcebf4;
+
+            padding: 35px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+        }
+
+        footer h3 {
+            color: white;
+        }
+
+        footer span {
+            color: #7eeeff;
+        }
+
+        footer h4 {
+            color: #7eeeff;
+            margin-bottom: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Aqua<span>Nex</span>
+        </div>
+
+        <div>
+
+            <a href="homepage.html">Home</a>
+
+            <a href="Introduction.html">
+                Aquaculture
+            </a>
+
+            <a href="Description1.html">
+                Water Quality
+            </a>
+
+            <a href="Calculation.html">
+                Calculation
+            </a>
+
+            <a href="Form.html">
+                Form
+            </a>
+
+            <a href="Comment.html">
+                Comments
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <section class="page-header">
+
+        <h1>
+            Aquaculture
+        </h1>
+
+        <p>
+            Understanding Modern Aquatic Farming
+        </p>
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <h2>
+            What is Aquaculture?
+        </h2>
+
+        <p>
+            Aquaculture is the farming of aquatic organisms
+            such as fish, shrimp, shellfish and aquatic plants
+            under controlled or semi-controlled conditions.
+        </p>
+
+        <p>
+            It is an important source of food, employment and
+            income. Modern aquaculture focuses on increasing
+            production while protecting water quality and the
+            environment.
+        </p>
+
+
+        <!-- CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>🐟 Fish Farming</h3>
+
+                <p>
+                    Raising fish in ponds, tanks, cages and
+                    other suitable culture systems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🦐 Shrimp Farming</h3>
+
+                <p>
+                    Culturing shrimp in ponds with proper
+                    water and feeding management.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🌱 Sustainable Farming</h3>
+
+                <p>
+                    Producing aquatic food while reducing
+                    environmental impact and resource waste.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h2>
+            Major Aquaculture Systems
+        </h2>
+
+        <div class="list">
+
+            <ul>
+
+                <li>
+                    Pond culture system
+                </li>
+
+                <li>
+                    Tank culture system
+                </li>
+
+                <li>
+                    Cage culture system
+                </li>
+
+                <li>
+                    Recirculating Aquaculture System (RAS)
+                </li>
+
+                <li>
+                    Integrated aquaculture system
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <h2 style="margin-top:45px;">
+            Importance of Aquaculture
+        </h2>
+
+        <div class="list">
+
+            <ul>
+
+                <li>
+                    Provides nutritious aquatic food.
+                </li>
+
+                <li>
+                    Creates employment opportunities.
+                </li>
+
+                <li>
+                    Supports rural communities.
+                </li>
+
+                <li>
+                    Reduces pressure on wild fish populations.
+                </li>
+
+                <li>
+                    Contributes to food security.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+
+            <h3>
+                Aqua<span>Nex</span>
+            </h3>
+
+            <p>
+                Modern Aquaculture Portal
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>
+                BLUE DRAGON
+            </h4>
+
+            <p>
+                Md. Abu Jahid Jim
+            </p>
+
+            <p>
+                Mariam Akter Bristy
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+                ©️ 2026 AquaNex
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

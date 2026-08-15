@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaNex - Calculation</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f2fbff;
+            color: #073b4c;
+        }
+
+        /* Menu */
+
+        .menu {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #073b4c;
+            margin: 8px;
+        }
+
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+            background: #0077b6;
+        }
+
+        .header h1 {
+            font-size: 42px;
+        }
+
+
+        /* Calculator */
+
+        .calculator {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .box {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #00000015;
+        }
+
+        .box h2 {
+            color: #0077b6;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border: 0;
+            border-radius: 20px;
+            background: #0077b6;
+            color: white;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e5f9ff;
+            border-radius: 8px;
+        }
+
+
+        /* Information */
+
+        .info {
+            background: #023047;
+            color: white;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .info h2 {
+            color: #83eaff;
+        }
+
+
+        /* Footer */
+
+        footer {
+            background: #023047;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        footer h3 {
+            color: #7eeeff;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- MENU -->
+
+<div class="menu">
+
+    <div class="logo">AquaNex</div>
+
+    <a href="homepage.html">Home</a>
+    <a href="Introduction.html">Aquaculture</a>
+    <a href="Description1.html">Water Quality</a>
+    <a href="Calculation.html">Calculation</a>
+    <a href="Form.html">Form</a>
+    <a href="Comment.html">Comments</a>
+
+</div>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>Aquaculture Calculator</h1>
+
+    <p>Simple tools for pond management</p>
+
+</div>
+
+
+<!-- CALCULATOR -->
+
+<div class="calculator">
+
+
+    <!-- Pond Volume -->
+
+    <div class="box">
+
+        <h2>💧 Pond Volume</h2>
+
+        <label>Length (meter)</label>
+        <input type="number" id="length">
+
+        <label>Width (meter)</label>
+        <input type="number" id="width">
+
+        <label>Depth (meter)</label>
+        <input type="number" id="depth">
+
+        <button onclick="calculateVolume()">
+            Calculate
+        </button>
+
+        <div id="volumeResult" class="result">
+            Result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- Fish Stocking -->
+
+    <div class="box">
+
+        <h2>🐟 Fish Stocking</h2>
+
+        <label>Pond Area (m²)</label>
+        <input type="number" id="area">
+
+        <label>Fish per m²</label>
+        <input type="number" id="density">
+
+        <button onclick="calculateStock()">
+            Calculate
+        </button>
+
+        <div id="stockResult" class="result">
+            Result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- Feed -->
+
+    <div class="box">
+
+        <h2>🌾 Feed Calculator</h2>
+
+        <label>Number of Fish</label>
+        <input type="number" id="fishNumber">
+
+        <label>Fish Weight (gram)</label>
+        <input type="number" id="fishWeight">
+
+        <label>Feed Rate (%)</label>
+        <input type="number" id="feedRate">
+
+        <button onclick="calculateFeed()">
+            Calculate
+        </button>
+
+        <div id="feedResult" class="result">
+            Result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- Pond Area -->
+
+    <div class="box">
+
+        <h2>📐 Pond Area</h2>
+
+        <label>Length (meter)</label>
+        <input type="number" id="areaLength">
+
+        <label>Width (meter)</label>
+        <input type="number" id="areaWidth">
+
+        <button onclick="calculateArea()">
+            Calculate
+        </button>
+
+        <div id="areaResult" class="result">
+            Result will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- INFORMATION -->
+
+<div class="info">
+
+    <h2>Why Use AquaNex Calculator?</h2>
+
+    <p>
+        AquaNex helps students and farmers
+        calculate basic pond measurements,
+        fish stocking and feed requirements.
+    </p>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>AquaNex</h3>
+
+    <p>Modern Aquaculture Portal</p>
+
+    <p>Team: Blue Dragon</p>
+
+    <p>
+        Md. Abu Jahid Jim & Mariam Akter Bristy
+    </p>
+
+    <p>©️ 2026 AquaNex</p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function calculateVolume() {
+
+    let l = Number(document.getElementById("length").value);
+    let w = Number(document.getElementById("width").value);
+    let d = Number(document.getElementById("depth").value);
+
+    let volume = l * w * d;
+
+    document.getElementById("volumeResult").innerHTML =
+        "Pond Volume = " + volume.toFixed(2) + " m³";
+}
+
+
+function calculateStock() {
+
+    let area = Number(document.getElementById("area").value);
+    let density = Number(document.getElementById("density").value);
+
+    let fish = area * density;
+
+    document.getElementById("stockResult").innerHTML =
+        "Estimated Fish = " + Math.round(fish);
+}
+
+
+function calculateFeed() {
+
+    let fish = Number(document.getElementById("fishNumber").value);
+    let weight = Number(document.getElementById("fishWeight").value);
+    let rate = Number(document.getElementById("feedRate").value);
+
+    let totalWeight = fish * weight / 1000;
+
+    let feed = totalWeight * rate / 100;
+
+    document.getElementById("feedResult").innerHTML =
+        "Daily Feed = " + feed.toFixed(2) + " kg";
+}
+
+
+function calculateArea() {
+
+    let l = Number(document.getElementById("areaLength").value);
+    let w = Number(document.getElementById("areaWidth").value);
+
+    let area = l * w;
+
+    document.getElementById("areaResult").innerHTML =
+        "Pond Area = " + area.toFixed(2) + " m²";
+}
+
+</script>
+
+</body>
+</html>
