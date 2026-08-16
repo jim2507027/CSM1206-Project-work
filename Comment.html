@@ -1,367 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>AquaNex | Comments</title>
+    <title>AquaNex - Comments</title>
 
     <style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: Arial;
             background: #f2fbff;
             color: #073b4c;
         }
 
-        /* NAVBAR */
 
-        nav {
+        /* ================= TOP MENU ================= */
+
+        .menu {
             background: white;
-            padding: 18px 8%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            box-shadow: 0 3px 15px #00000012;
+            padding: 25px;
+            text-align: center;
         }
+
+
+        /* AquaNex Logo */
 
         .logo {
-            font-size: 28px;
+            font-size: 38px;
             font-weight: bold;
-            color: #075985;
-        }
-
-        .logo span {
-            color: #00a6d6;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #345563;
-
-            padding: 8px 10px;
-
-            font-size: 14px;
-
-            border-radius: 20px;
-        }
-
-        nav a:hover,
-        nav a.active {
-            background: #e2f8ff;
-            color: #009ac4;
-        }
-
-
-        /* HEADER */
-
-        .header {
-            text-align: center;
-
-            padding: 70px 20px;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    #023047,
-                    #0077b6,
-                    #00b4d8
-                );
-        }
-
-        .header h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
-
-        .header p {
-            color: #dffaff;
-            font-size: 17px;
-        }
-
-
-        /* COMMENT SECTION */
-
-        .container {
-            max-width: 900px;
-
-            margin: 55px auto;
-
-            padding: 0 25px;
-        }
-
-        .comment-box {
-            background: white;
-
-            padding: 35px;
-
-            border-radius: 20px;
-
-            border: 1px solid #dceff5;
-
-            box-shadow:
-                0 10px 30px #0077b612;
-        }
-
-        .comment-box h2 {
-            color: #0077b6;
-
-            margin-bottom: 8px;
-        }
-
-        .comment-box .intro {
-            color: #6b858e;
-
-            line-height: 1.6;
-
+            color: #1596d1;
             margin-bottom: 25px;
         }
 
 
-        /* FORM */
+        /* Menu Links */
 
-        .field {
-            margin-bottom: 18px;
+        .menu a {
+            text-decoration: none;
+            color: #555;
+            margin: 0 12px;
+            font-size: 18px;
         }
+
+
+        /* Hover Effect */
+
+        .menu a:hover {
+            color: #0077b6;
+        }
+
+
+        /* Active Comments */
+
+        .menu a.active {
+            color: #0077b6;
+            font-weight: bold;
+            border-bottom: 2px solid #0077b6;
+            padding-bottom: 8px;
+        }
+
+
+        /* ================= BLUE HEADER ================= */
+
+        .header {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 45px;
+        }
+
+
+        /* ================= COMMENT BOX ================= */
+
+        .box {
+            background: white;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+
+        h2 {
+            color: #0077b6;
+        }
+
+
+        /* Labels */
 
         label {
             display: block;
-
-            margin-bottom: 7px;
-
+            margin-top: 15px;
             font-weight: bold;
-
-            color: #174d60;
-
-            font-size: 14px;
         }
+
+
+        /* Input, Select and Textarea */
 
         input,
         select,
         textarea {
             width: 100%;
-
-            padding: 12px;
-
-            border: 1px solid #cce8ef;
-
-            border-radius: 8px;
-
-            outline: none;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 14px;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #00a6d6;
-        }
+
+        /* Comment Area */
 
         textarea {
-            height: 130px;
-
-            resize: vertical;
+            height: 100px;
         }
 
 
-        /* BUTTON */
+        /* Submit Button */
 
         button {
             width: 100%;
-
-            padding: 14px;
-
-            border: none;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #0077b6,
-                    #00b4d8
-                );
-
+            padding: 12px;
+            margin-top: 20px;
+            background: #0077b6;
             color: white;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
+            border: none;
+            border-radius: 20px;
             cursor: pointer;
         }
 
+
         button:hover {
-            opacity: 0.9;
+            background: #023047;
         }
 
 
-        /* SUCCESS MESSAGE */
+        /* Success Message */
 
-        #success {
+        #message {
             display: none;
-
-            margin-top: 20px;
-
-            padding: 15px;
-
+            margin-top: 15px;
+            padding: 10px;
+            background: #e5f9ff;
+            color: #0077b6;
             text-align: center;
-
-            background: #e6faff;
-
-            color: #0077a8;
-
-            border-radius: 10px;
-
-            font-weight: bold;
         }
 
 
-        /* TEAM */
+        /* ================= TEAM ================= */
 
         .team {
-            margin-top: 45px;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 20px;
-        }
-
-        .member {
-            background: white;
-
-            padding: 25px;
-
             text-align: center;
-
-            border-radius: 16px;
-
-            border: 1px solid #dceff5;
-
-            box-shadow:
-                0 8px 25px #0077b612;
-        }
-
-        .member-icon {
-            width: 65px;
-            height: 65px;
-
-            margin: 0 auto 15px;
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            background: #e3faff;
-
-            font-size: 28px;
-        }
-
-        .member h3 {
-            color: #075985;
-
-            margin-bottom: 5px;
-        }
-
-        .member p {
-            color: #6b858e;
-
-            font-size: 14px;
+            margin: 30px;
         }
 
 
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer {
-            margin-top: 70px;
-
             background: #023047;
-
-            color: #bcebf4;
-
-            padding: 40px 8%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            flex-wrap: wrap;
-
-            gap: 25px;
-        }
-
-        footer h3 {
             color: white;
-
-            margin-bottom: 7px;
-        }
-
-        footer h3 span {
-            color: #7eeeff;
-        }
-
-        footer h4 {
-            color: #7eeeff;
-
-            margin-bottom: 8px;
-        }
-
-
-        /* MOBILE */
-
-        @media(max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .header h1 {
-                font-size: 38px;
-            }
-
-            .team {
-                grid-template-columns: 1fr;
-            }
-
-            footer {
-                flex-direction: column;
-            }
-
+            text-align: center;
+            padding: 25px;
         }
 
     </style>
@@ -372,287 +171,266 @@
 <body>
 
 
-    <!-- =====================
-         NAVBAR
-    ====================== -->
+<!-- ================= TOP MENU ================= -->
 
-    <nav>
+<div class="menu">
 
-        <div class="logo">
-            Aqua<span>Nex</span>
-        </div>
+    <div class="logo">
+        AquaNex
+    </div>
 
-        <div class="nav-links">
 
-            <a href="index.html">
-                Home
-            </a>
+    <a href="index.html">
+        Home
+    </a>
 
-            <a href="Introduction.html">
-                Aquaculture
-            </a>
 
-            <a href="Description1.html">
-                Water Quality
-            </a>
+    <a href="details1.html">
+        Aquaculture
+    </a>
 
-            <a href="Calculation.html">
-                Calculation
-            </a>
 
-            <a href="Form.html">
-                Farm Form
-            </a>
+    <a href="details2.html">
+        Water Quality
+    </a>
 
-            <a href="Comment.html" class="active">
-                Comments
-            </a>
-            
- <a href="aboutus.html">About Us</a>
 
-        </div>
+    <a href="calculation.html">
+        Calculation
+    </a>
 
-    </nav>
 
+    <a href="form.html">
+        Form
+    </a>
 
-    
 
-    <section class="header">
+    <!-- ACTIVE PAGE -->
 
-        <h1>
-            Comments & Feedback
-        </h1>
+    <a href="comments.html" class="active">
+        Comments
+    </a>
 
-        <p>
-            Share your thoughts about AquaNex
-        </p>
 
-    </section>
+    <a href="about.html">
+        About Us
+    </a>
 
+</div>
 
-    
 
-    <main class="container">
 
-        <div class="comment-box">
+<!-- ================= HEADER ================= -->
 
-            <h2>
-                💬 Leave a Comment
-            </h2>
+<div class="header">
 
-            <p class="intro">
-                Your feedback helps us improve AquaNex
-                and make aquaculture information easier
-                for everyone.
-            </p>
+    <h1>
+        Comments & Feedback
+    </h1>
 
+    <p>
+        Share your thoughts about AquaNex
+    </p>
 
-            <form id="commentForm">
+</div>
 
 
-                <div class="field">
 
-                    <label>
-                        Your Name
-                    </label>
+<!-- ================= COMMENT FORM ================= -->
 
-                    <input
-                        type="text"
-                        placeholder="Enter your name"
-                        required
-                    >
+<div class="box">
 
-                </div>
+    <h2>
+        💬 Leave a Comment
+    </h2>
 
 
-                <div class="field">
+    <p>
+        We would love to hear your feedback.
+    </p>
 
-                    <label>
-                        Email Address
-                    </label>
 
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                    >
+    <!-- NAME -->
 
-                </div>
+    <label>
+        Name
+    </label>
 
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+    >
 
-                <div class="field">
 
-                    <label>
-                        Rating
-                    </label>
+    <!-- EMAIL -->
 
-                    <select required>
+    <label>
+        Email
+    </label>
 
-                        <option value="">
-                            Select rating
-                        </option>
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+    >
 
-                        <option>
-                            ⭐⭐⭐⭐⭐ Excellent
-                        </option>
 
-                        <option>
-                            ⭐⭐⭐⭐ Very Good
-                        </option>
+    <!-- RATING -->
 
-                        <option>
-                            ⭐⭐⭐ Good
-                        </option>
+    <label>
+        Rating
+    </label>
 
-                        <option>
-                            ⭐⭐ Needs Improvement
-                        </option>
+    <select id="rating">
 
-                        <option>
-                            ⭐ Poor
-                        </option>
+        <option value="">
+            Select rating
+        </option>
 
-                    </select>
+        <option>
+            Excellent ⭐⭐⭐⭐⭐
+        </option>
 
-                </div>
+        <option>
+            Very Good ⭐⭐⭐⭐
+        </option>
 
+        <option>
+            Good ⭐⭐⭐
+        </option>
 
-                <div class="field">
+        <option>
+            Average ⭐⭐
+        </option>
 
-                    <label>
-                        Your Comment
-                    </label>
+        <option>
+            Poor ⭐
+        </option>
 
-                    <textarea
-                        placeholder="Write your comment here..."
-                        required
-                    ></textarea>
+    </select>
 
-                </div>
 
+    <!-- COMMENT -->
 
-                <button type="submit">
-                    Submit Comment
-                </button>
+    <label>
+        Comment
+    </label>
 
+    <textarea
+        id="comment"
+        placeholder="Write your comment..."
+    ></textarea>
 
-                <div id="success">
-                    ✓ Thank you! Your feedback has been submitted.
-                </div>
 
+    <!-- BUTTON -->
 
-            </form>
+    <button onclick="sendComment()">
 
-        </div>
+        Submit Comment
 
+    </button>
 
-        <div class="team">
 
-            <div class="member">
+    <!-- MESSAGE -->
 
-                <div class="member-icon">
-                    👨‍💻
-                </div>
+    <div id="message">
 
-                <h3>
-                    Md. Abu Jahid Jim
-                </h3>
+        ✓ Thank you for your feedback!
 
-                <p>
-                    Blue Dragon Team Member
-                </p>
+    </div>
 
-            </div>
+</div>
 
 
-            <div class="member">
 
-                <div class="member-icon">
-                    👩‍💻
-                </div>
+<!-- ================= TEAM ================= -->
 
-                <h3>
-                    Mariam Akter Bristy
-                </h3>
+<div class="team">
 
-                <p>
-                    Blue Dragon Team Member
-                </p>
+    <h2>
+        Blue Dragon Team
+    </h2>
 
-            </div>
+    <p>
+        Md. Abu Jahid Jim
+    </p>
 
-        </div>
+    <p>
+        Mariam Akter Bristy
+    </p>
 
-    </main>
+</div>
 
 
-    
 
-    <footer>
+<!-- ================= FOOTER ================= -->
 
-        <div>
+<footer>
 
-            <h3>
-                Aqua<span>Nex</span>
-            </h3>
+    <h3>
+        AquaNex
+    </h3>
 
-            <p>
-                Modern Aquaculture Portal
-            </p>
+    <p>
+        Modern Aquaculture Portal
+    </p>
 
-        </div>
+    <p>
+        ©️ 2026 Blue Dragon
+    </p>
 
+</footer>
 
-        <div>
 
-            <h4>
-                BLUE DRAGON
-            </h4>
 
-            <p>
-                Md. Abu Jahid Jim
-            </p>
+<!-- ================= JAVASCRIPT ================= -->
 
-            <p>
-                Mariam Akter Bristy
-            </p>
+<script>
 
-        </div>
+function sendComment() {
 
+    let name =
+        document.getElementById("name").value;
 
-        <div>
+    let comment =
+        document.getElementById("comment").value;
 
-            <p>
-                ©️ 2026 AquaNex
-            </p>
 
-            <p>
-                Smart Water • Healthy Aquaculture
-            </p>
+    if (name == "" || comment == "") {
 
-        </div>
+        alert(
+            "Please enter your name and comment."
+        );
 
-    </footer>
+    }
 
+    else {
 
+        document.getElementById("message")
+        .style.display = "block";
 
 
-    <script>
+        document.getElementById("name")
+        .value = "";
 
-        document
-            .getElementById("commentForm")
-            .addEventListener("submit", function(event) {
 
-                event.preventDefault();
+        document.getElementById("email")
+        .value = "";
 
-                document
-                    .getElementById("success")
-                    .style.display = "block";
 
-                this.reset();
+        document.getElementById("rating")
+        .value = "";
 
-            });
 
-    </script>
+        document.getElementById("comment")
+        .value = "";
+
+    }
+
+}
+
+</script>
 
 
 </body>

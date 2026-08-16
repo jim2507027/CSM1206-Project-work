@@ -17,7 +17,8 @@
             color: #073b4c;
         }
 
-    
+
+        /* ================= MENU ================= */
 
         .menu {
             background: white;
@@ -38,8 +39,21 @@
             margin: 8px;
         }
 
+        /* Calculation Highlight */
 
-    
+        .menu a.active {
+            color: #0077b6;
+            font-weight: bold;
+            border-bottom: 2px solid #0077b6;
+            padding-bottom: 7px;
+        }
+
+        .menu a:hover {
+            color: #0077b6;
+        }
+
+
+        /* ================= HEADER ================= */
 
         .header {
             text-align: center;
@@ -53,7 +67,7 @@
         }
 
 
-        
+        /* ================= CALCULATOR ================= */
 
         .calculator {
             display: flex;
@@ -94,6 +108,11 @@
             border-radius: 20px;
             background: #0077b6;
             color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #023047;
         }
 
         .result {
@@ -104,7 +123,47 @@
         }
 
 
-    
+        /* ================= SUMMARY TABLE ================= */
+
+        .summary {
+            display: none;
+            background: white;
+            max-width: 1000px;
+            margin: 20px auto 50px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #00000015;
+        }
+
+        .summary h2 {
+            text-align: center;
+            color: #0077b6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #0077b6;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background: #f2fbff;
+        }
+
+
+        /* ================= INFORMATION ================= */
 
         .info {
             background: #023047;
@@ -120,7 +179,7 @@
         }
 
 
-        
+        /* ================= FOOTER ================= */
 
         footer {
             background: #023047;
@@ -142,57 +201,108 @@
 <body>
 
 
-
+<!-- ================= MENU ================= -->
 
 <div class="menu">
 
-    <div class="logo">AquaNex</div>
+    <div class="logo">
+        AquaNex
+    </div>
 
-    <a href="index.html">Home</a>
-    <a href="Introduction.html">Aquaculture</a>
-    <a href="Description1.html">Water Quality</a>
-    <a href="Calculation.html">Calculation</a>
-    <a href="Form.html">Form</a>
-    <a href="Comment.html">Comments</a>
-     <a href="aboutus.html">About Us</a>
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="details1.html">
+        Aquaculture
+    </a>
+
+    <a href="details2.html">
+        Water Quality
+    </a>
+
+    <!-- ACTIVE CALCULATION -->
+
+    <a href="calculation.html" class="active">
+        Calculation
+    </a>
+
+    <a href="form.html">
+        Form
+    </a>
+
+    <a href="comments.html">
+        Comments
+    </a>
 
 </div>
 
 
 
+<!-- ================= HEADER ================= -->
 
 <div class="header">
 
-    <h1>Aquaculture Calculator</h1>
+    <h1>
+        Aquaculture Calculator
+    </h1>
 
-    <p>Simple tools for pond management</p>
+    <p>
+        Simple tools for pond management
+    </p>
 
 </div>
 
 
 
+<!-- ================= CALCULATOR ================= -->
 
 <div class="calculator">
 
 
-    
+    <!-- POND VOLUME -->
 
     <div class="box">
 
         <h2>💧 Pond Volume</h2>
 
-        <label>Length (meter)</label>
-        <input type="number" id="length">
+        <label>
+            Length (meter)
+        </label>
 
-        <label>Width (meter)</label>
-        <input type="number" id="width">
+        <input
+            type="number"
+            id="length"
+            placeholder="Enter length"
+        >
 
-        <label>Depth (meter)</label>
-        <input type="number" id="depth">
+
+        <label>
+            Width (meter)
+        </label>
+
+        <input
+            type="number"
+            id="width"
+            placeholder="Enter width"
+        >
+
+
+        <label>
+            Depth (meter)
+        </label>
+
+        <input
+            type="number"
+            id="depth"
+            placeholder="Enter depth"
+        >
+
 
         <button onclick="calculateVolume()">
             Calculate
         </button>
+
 
         <div id="volumeResult" class="result">
             Result will appear here.
@@ -201,21 +311,39 @@
     </div>
 
 
-    
+
+    <!-- FISH STOCKING -->
 
     <div class="box">
 
         <h2>🐟 Fish Stocking</h2>
 
-        <label>Pond Area (m²)</label>
-        <input type="number" id="area">
+        <label>
+            Pond Area (m²)
+        </label>
 
-        <label>Fish per m²</label>
-        <input type="number" id="density">
+        <input
+            type="number"
+            id="area"
+            placeholder="Enter pond area"
+        >
+
+
+        <label>
+            Fish per m²
+        </label>
+
+        <input
+            type="number"
+            id="density"
+            placeholder="Enter fish density"
+        >
+
 
         <button onclick="calculateStock()">
             Calculate
         </button>
+
 
         <div id="stockResult" class="result">
             Result will appear here.
@@ -224,24 +352,50 @@
     </div>
 
 
-    
+
+    <!-- FEED -->
 
     <div class="box">
 
         <h2>🌾 Feed Calculator</h2>
 
-        <label>Number of Fish</label>
-        <input type="number" id="fishNumber">
+        <label>
+            Number of Fish
+        </label>
 
-        <label>Fish Weight (gram)</label>
-        <input type="number" id="fishWeight">
+        <input
+            type="number"
+            id="fishNumber"
+            placeholder="Enter fish number"
+        >
 
-        <label>Feed Rate (%)</label>
-        <input type="number" id="feedRate">
+
+        <label>
+            Fish Weight (gram)
+        </label>
+
+        <input
+            type="number"
+            id="fishWeight"
+            placeholder="Enter weight"
+        >
+
+
+        <label>
+            Feed Rate (%)
+        </label>
+
+        <input
+            type="number"
+            id="feedRate"
+            placeholder="Enter feed rate"
+        >
+
 
         <button onclick="calculateFeed()">
             Calculate
         </button>
+
 
         <div id="feedResult" class="result">
             Result will appear here.
@@ -251,20 +405,38 @@
 
 
 
+    <!-- POND AREA -->
 
     <div class="box">
 
         <h2>📐 Pond Area</h2>
 
-        <label>Length (meter)</label>
-        <input type="number" id="areaLength">
+        <label>
+            Length (meter)
+        </label>
 
-        <label>Width (meter)</label>
-        <input type="number" id="areaWidth">
+        <input
+            type="number"
+            id="areaLength"
+            placeholder="Enter length"
+        >
+
+
+        <label>
+            Width (meter)
+        </label>
+
+        <input
+            type="number"
+            id="areaWidth"
+            placeholder="Enter width"
+        >
+
 
         <button onclick="calculateArea()">
             Calculate
         </button>
+
 
         <div id="areaResult" class="result">
             Result will appear here.
@@ -276,95 +448,380 @@
 
 
 
+<!-- ================= SUMMARY TABLE ================= -->
+
+<div class="summary" id="summary">
+
+    <h2>
+        📊 Calculation Summary
+    </h2>
+
+
+    <table>
+
+        <tr>
+
+            <th>
+                Calculation
+            </th>
+
+            <th>
+                Input Information
+            </th>
+
+            <th>
+                Result
+            </th>
+
+        </tr>
+
+
+        <!-- Pond Volume -->
+
+        <tr>
+
+            <td>
+                💧 Pond Volume
+            </td>
+
+            <td id="volumeInput">
+                -
+            </td>
+
+            <td id="volumeTableResult">
+                -
+            </td>
+
+        </tr>
+
+
+        <!-- Fish Stocking -->
+
+        <tr>
+
+            <td>
+                🐟 Fish Stocking
+            </td>
+
+            <td id="stockInput">
+                -
+            </td>
+
+            <td id="stockTableResult">
+                -
+            </td>
+
+        </tr>
+
+
+        <!-- Feed -->
+
+        <tr>
+
+            <td>
+                🌾 Feed Requirement
+            </td>
+
+            <td id="feedInput">
+                -
+            </td>
+
+            <td id="feedTableResult">
+                -
+            </td>
+
+        </tr>
+
+
+        <!-- Pond Area -->
+
+        <tr>
+
+            <td>
+                📐 Pond Area
+            </td>
+
+            <td id="areaInput">
+                -
+            </td>
+
+            <td id="areaTableResult">
+                -
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<!-- ================= INFORMATION ================= -->
 
 <div class="info">
 
-    <h2>Why Use AquaNex Calculator?</h2>
+    <h2>
+        Why Use AquaNex Calculator?
+    </h2>
 
     <p>
+
         AquaNex helps students and farmers
         calculate basic pond measurements,
         fish stocking and feed requirements.
+
     </p>
 
 </div>
 
 
 
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <h3>AquaNex</h3>
+    <h3>
+        AquaNex
+    </h3>
 
-    <p>Modern Aquaculture Portal</p>
+    <p>
+        Modern Aquaculture Portal
+    </p>
 
-    <p>Team: Blue Dragon</p>
+    <p>
+        Team: Blue Dragon
+    </p>
 
     <p>
         Md. Abu Jahid Jim & Mariam Akter Bristy
     </p>
 
-    <p>©️ 2026 AquaNex</p>
+    <p>
+        ©️ 2026 AquaNex
+    </p>
 
 </footer>
 
 
 
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
+
+/* POND VOLUME */
+
 function calculateVolume() {
 
-    let l = Number(document.getElementById("length").value);
-    let w = Number(document.getElementById("width").value);
-    let d = Number(document.getElementById("depth").value);
+    let l =
+        Number(document.getElementById("length").value);
+
+    let w =
+        Number(document.getElementById("width").value);
+
+    let d =
+        Number(document.getElementById("depth").value);
+
+
+    if (l == 0 || w == 0 || d == 0) {
+
+        alert("Please enter all pond volume information.");
+
+        return;
+
+    }
+
 
     let volume = l * w * d;
 
+
+    let result =
+        volume.toFixed(2) + " m³";
+
+
     document.getElementById("volumeResult").innerHTML =
-        "Pond Volume = " + volume.toFixed(2) + " m³";
+        "Pond Volume = " + result;
+
+
+    document.getElementById("volumeInput").innerHTML =
+        "Length: " + l +
+        " m, Width: " + w +
+        " m, Depth: " + d + " m";
+
+
+    document.getElementById("volumeTableResult").innerHTML =
+        result;
+
+
+    showTable();
+
 }
 
+
+
+/* FISH STOCKING */
 
 function calculateStock() {
 
-    let area = Number(document.getElementById("area").value);
-    let density = Number(document.getElementById("density").value);
+    let area =
+        Number(document.getElementById("area").value);
 
-    let fish = area * density;
+    let density =
+        Number(document.getElementById("density").value);
+
+
+    if (area == 0 || density == 0) {
+
+        alert("Please enter all fish stocking information.");
+
+        return;
+
+    }
+
+
+    let fish =
+        area * density;
+
+
+    let result =
+        Math.round(fish) + " fish";
+
 
     document.getElementById("stockResult").innerHTML =
         "Estimated Fish = " + Math.round(fish);
+
+
+    document.getElementById("stockInput").innerHTML =
+        "Area: " + area +
+        " m², Density: " + density +
+        " fish/m²";
+
+
+    document.getElementById("stockTableResult").innerHTML =
+        result;
+
+
+    showTable();
+
 }
 
+
+
+/* FEED CALCULATOR */
 
 function calculateFeed() {
 
-    let fish = Number(document.getElementById("fishNumber").value);
-    let weight = Number(document.getElementById("fishWeight").value);
-    let rate = Number(document.getElementById("feedRate").value);
+    let fish =
+        Number(document.getElementById("fishNumber").value);
 
-    let totalWeight = fish * weight / 1000;
+    let weight =
+        Number(document.getElementById("fishWeight").value);
 
-    let feed = totalWeight * rate / 100;
+    let rate =
+        Number(document.getElementById("feedRate").value);
+
+
+    if (fish == 0 || weight == 0 || rate == 0) {
+
+        alert("Please enter all feed information.");
+
+        return;
+
+    }
+
+
+    let totalWeight =
+        fish * weight / 1000;
+
+
+    let feed =
+        totalWeight * rate / 100;
+
+
+    let result =
+        feed.toFixed(2) + " kg/day";
+
 
     document.getElementById("feedResult").innerHTML =
-        "Daily Feed = " + feed.toFixed(2) + " kg";
+        "Daily Feed = " + result;
+
+
+    document.getElementById("feedInput").innerHTML =
+        "Fish: " + fish +
+        ", Weight: " + weight +
+        " g, Rate: " + rate + "%";
+
+
+    document.getElementById("feedTableResult").innerHTML =
+        result;
+
+
+    showTable();
+
 }
 
 
+
+/* POND AREA */
+
 function calculateArea() {
 
-    let l = Number(document.getElementById("areaLength").value);
-    let w = Number(document.getElementById("areaWidth").value);
+    let l =
+        Number(document.getElementById("areaLength").value);
 
-    let area = l * w;
+    let w =
+        Number(document.getElementById("areaWidth").value);
+
+
+    if (l == 0 || w == 0) {
+
+        alert("Please enter pond area information.");
+
+        return;
+
+    }
+
+
+    let area =
+        l * w;
+
+
+    let result =
+        area.toFixed(2) + " m²";
+
 
     document.getElementById("areaResult").innerHTML =
-        "Pond Area = " + area.toFixed(2) + " m²";
+        "Pond Area = " + result;
+
+
+    document.getElementById("areaInput").innerHTML =
+        "Length: " + l +
+        " m, Width: " + w + " m";
+
+
+    document.getElementById("areaTableResult").innerHTML =
+        result;
+
+
+    showTable();
+
+}
+
+
+
+/* SHOW SUMMARY TABLE */
+
+function showTable() {
+
+    document.getElementById("summary").style.display =
+        "block";
+
 }
 
 </script>
 
+
 </body>
+
 </html>
