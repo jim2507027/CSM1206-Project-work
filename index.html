@@ -2,278 +2,1551 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>Happy Birthday Jubu 🤍</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 
-    <title>AquaNex Home</title>
+/* =========================
+   BASIC
+========================= */
 
-    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0fbff;
-            color: #073b4c;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        
-
-        nav {
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #0077b6;
-            margin-bottom: 15px;
-        }
-
-        nav a{
-            text-decoration: none;
-            color: #073b4c;
-            margin: 10px;
-        }
-
-        nav a:hover {
-            color: #00a6d6;
-        }
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #050008;
+    overflow-x: hidden;
+}
 
 
-        /* Home section */
+/* =========================
+   BACKGROUND
+========================= */
 
-        .home {
-            text-align: center;
-            color: white;
+body::before {
 
-            padding: 100px 20px;
+    content: "";
 
-            background: linear-gradient(
-                #023047,
-                #0077b6,
-                #00b4d8
-            );
-        }
+    position: fixed;
 
-        .home h1 {
-            font-size: 50px;
-            margin: 10px;
-        }
+    inset: 0;
 
-        .home h1 span {
-            color: #9bf6ff;
-        }
+    z-index: -5;
 
-        .home p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            #5b005f 0,
+            transparent 25%
+        ),
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
+        radial-gradient(
+            circle at 80% 20%,
+            #19006b 0,
+            transparent 28%
+        ),
 
-            padding: 12px 25px;
+        radial-gradient(
+            circle at 50% 80%,
+            #45002d 0,
+            transparent 35%
+        ),
 
-            background-color: white;
-            color: #0077b6;
-
-            text-decoration: none;
-            border-radius: 25px;
-        }
+        #050008;
+}
 
 
-        /* Information */
+/* =========================
+   FIREWORK CANVAS
+========================= */
 
-        .info {
-            text-align: center;
-            padding: 50px 20px;
-        }
+canvas {
 
-        .info h2 {
-            color: #0077b6;
-        }
+    position: fixed;
 
+    inset: 0;
 
-        /* Cards */
+    z-index: -2;
 
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-
-            padding: 20px;
-        }
-
-        .card {
-            background-color: white;
-
-            width: 250px;
-            padding: 25px;
-
-            text-align: center;
-
-            border-radius: 15px;
-
-            box-shadow: 0 5px 15px #00000015;
-        }
-
-        .card h3 {
-            color: #0077b6;
-        }
+    pointer-events: none;
+}
 
 
-        /* Footer */
+/* =========================
+   MUSIC BUTTON
+========================= */
 
-        footer {
-            margin-top: 50px;
+.music-button {
 
-            background-color: #023047;
-            color: white;
+    position: fixed;
 
-            text-align: center;
+    right: 18px;
 
-            padding: 30px;
-        }
+    top: 18px;
 
-    </style>
+    z-index: 50;
+
+    padding: 12px 18px;
+
+    border: 1px solid #ff55d0;
+
+    border-radius: 30px;
+
+    background: #18001e;
+
+    color: white;
+
+    box-shadow:
+        0 0 10px #ff16b5,
+        0 0 25px #ff16b5;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.music-button:hover {
+
+    transform: scale(1.08);
+
+    background: #ff159e;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 70px 20px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.small-title {
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px #ff42cf,
+        0 0 20px #ff42cf;
+
+    animation: fade 2s infinite alternate;
+}
+
+
+.name {
+
+    font-family: cursive;
+
+    font-size: clamp(
+        70px,
+        16vw,
+        145px
+    );
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #ff00a8,
+        0 0 35px #ff00a8,
+        0 0 80px #ff00a8;
+
+    animation: glow 1.5s infinite alternate;
+}
+
+
+.happy-birthday {
+
+    font-family: cursive;
+
+    font-size: clamp(
+        42px,
+        9vw,
+        85px
+    );
+
+    font-weight: bold;
+
+    color: #ffd84d;
+
+    text-shadow:
+        0 0 12px #ff8500,
+        0 0 35px #ff8500;
+
+    animation: birthday 1s infinite alternate;
+}
+
+
+.intro-message {
+
+    max-width: 720px;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    background: #18001fcc;
+
+    border: 1px solid #ff36bf;
+
+    box-shadow:
+        0 0 22px #ff008c;
+
+    line-height: 1.7;
+
+    font-size: 18px;
+}
+
+
+.main-button {
+
+    margin-top: 20px;
+
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    border: 2px solid #ff35c5;
+
+    color: white;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff35c5;
+
+    transition: 0.3s;
+}
+
+
+.main-button:hover {
+
+    background: #ff159e;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px #ff159e;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+
+    padding: 80px 20px;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    font-family: cursive;
+
+    font-size: 48px;
+
+    color: #ffd34d;
+
+    text-shadow:
+        0 0 18px #ff4b00;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   MEMORY GALLERY
+========================= */
+
+.memories {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.memory {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border: 2px solid #ff43c8;
+
+    background: #150018;
+
+    box-shadow:
+        0 0 25px #ff008c55;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+.memory:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 0 35px #ff008c;
+}
+
+
+.memory img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.memory:hover img {
+
+    transform: scale(1.08);
+}
+
+
+.memory-caption {
+
+    position: absolute;
+
+    left: 15px;
+
+    bottom: 15px;
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    background: #080008dd;
+
+    border: 1px solid #ff67d5;
+
+    box-shadow:
+        0 0 12px #ff2ab7;
+}
+
+
+/* =========================
+   PERSONAL MESSAGE
+========================= */
+
+.message-box {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background: #18001fcc;
+
+    border: 1px solid #ff42c8;
+
+    box-shadow:
+        0 0 30px #ff009955;
+
+    line-height: 1.9;
+
+    font-size: 19px;
+}
+
+
+.pink {
+
+    color: #ff72d4;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-section {
+
+    text-align: center;
+
+    margin-top: 70px;
+}
+
+
+.cake {
+
+    position: relative;
+
+    width: 310px;
+
+    height: 160px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            #ffb9dc,
+            #df679d
+        );
+
+    border:
+        4px solid #ff8bc3;
+
+    border-radius:
+        20px 20px 32px 32px;
+
+    box-shadow:
+        0 0 30px #ff1ba8;
+}
+
+
+.cream {
+
+    position: absolute;
+
+    left: -2px;
+
+    top: 15px;
+
+    width: calc(100% + 4px);
+
+    height: 42px;
+
+    background: #fff3fb;
+
+    border-radius: 50%;
+}
+
+
+.cake-text {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    width: 100%;
+
+    color: #75124e;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CANDLES
+========================= */
+
+.candles {
+
+    position: absolute;
+
+    top: -62px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+
+.candle {
+
+    width: 14px;
+
+    height: 62px;
+
+    border-radius: 5px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff 0 7px,
+            #ff4ca5 7px 14px
+        );
+
+    position: relative;
+}
+
+
+.flame {
+
+    position: absolute;
+
+    top: -24px;
+
+    left: -2px;
+
+    width: 18px;
+
+    height: 24px;
+
+    background: #ffd51e;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    box-shadow:
+        0 0 18px #ff8d00;
+
+    animation:
+        flicker .3s infinite alternate;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+#surprise {
+
+    display: none;
+
+    max-width: 760px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: #27002dcc;
+
+    border: 1px solid #ff36bf;
+
+    box-shadow:
+        0 0 30px #ff00a8;
+
+    line-height: 1.9;
+
+    font-size: 19px;
+
+    animation:
+        popup .6s ease;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000e;
+
+    z-index: 100;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.lightbox img {
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 40px #ff31c2;
+}
+
+
+.close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: #aaa;
+
+    border-top:
+        1px solid #401b46;
+}
+
+
+footer b {
+
+    color: #ff63cd;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes glow {
+
+    from {
+
+        text-shadow:
+            0 0 10px #ff00a8,
+            0 0 35px #ff00a8;
+    }
+
+    to {
+
+        text-shadow:
+            0 0 15px #ff00a8,
+            0 0 50px #ff00a8,
+            0 0 100px #ff00a8;
+
+        transform: scale(1.04);
+    }
+}
+
+
+@keyframes birthday {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+
+@keyframes flicker {
+
+    to {
+
+        transform:
+            rotate(-45deg)
+            scale(1.18);
+    }
+}
+
+
+@keyframes popup {
+
+    from {
+
+        transform: scale(.5);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade {
+
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .memories {
+
+        grid-template-columns: 1fr;
+    }
+
+    .memory img {
+
+        height: 280px;
+    }
+
+    .intro-message {
+
+        font-size: 15px;
+    }
+
+    .message-box {
+
+        font-size: 16px;
+
+        padding: 25px;
+    }
+
+    .music-button {
+
+        right: 10px;
+
+        top: 10px;
+
+        font-size: 12px;
+    }
+}
+
+</style>
 
 </head>
 
 
 <body>
 
- 
-    
 
-    <nav>
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
 
-        <div class="logo">
-            AquaNex
+<button
+    class="music-button"
+    onclick="openBirthdaySong()">
+
+    🎵 Birthday Song
+
+</button>
+
+
+
+<!-- =========================
+     FIREWORK CANVAS
+========================= -->
+
+<canvas id="fireworks"></canvas>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <div class="small-title">
+
+        ✨ TO MY AMAZING BEST FRIEND ✨
+
+    </div>
+
+
+    <div class="name">
+
+        Jubu 🤍
+
+    </div>
+
+
+    <div class="happy-birthday">
+
+        Happy Birthday!
+
+    </div>
+
+
+    <div class="intro-message">
+
+        Wishing you a day filled with
+
+        <b>happiness, love, laughter</b>
+
+        and beautiful memories
+
+        that last forever. 🌸✨
+
+    </div>
+
+
+    <button
+        class="main-button"
+        onclick="scrollToMemories()">
+
+        📸 Our Memories
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories">
+
+    <h2 class="section-title">
+
+        ✨ Our Memories ✨
+
+    </h2>
+
+
+    <div class="memories">
+
+
+        <!-- PHOTO 1 -->
+
+        <div
+            class="memory"
+            onclick="openPhoto('photo1.jpg')">
+
+            <img
+                src="photo1.jpg"
+                alt="Our memory">
+
+            <div class="memory-caption">
+
+                🌊 One of those days
+
+            </div>
+
         </div>
 
-        <a href="index.html" class="active">Home</a>
-
-        <a href="Introduction.html">Aquaculture</a>
-        <a href="Description1.html">Water Quality</a>
-
-        <a href="Calculation.html">Calculation</a>
-
-        <a href="Form.html">Form</a>
-
-        <a href="Comment.html">Comments</a>
-
-        <a href="aboutus.html">About Us</a>
 
 
-    </nav>
+        <!-- PHOTO 2 -->
 
+        <div
+            class="memory"
+            onclick="openPhoto('photo2.jpg')">
 
-    
+            <img
+                src="photo2.jpg"
+                alt="Our memory">
 
-    <section class="home">
+            <div class="memory-caption">
 
-        <h1>
-            Welcome to <span>AquaNex</span>
-        </h1>
+                🤍 Together
 
-        <p>
-            Modern Aquaculture and Water Management Portal
-        </p>
-
-        <p>
-            Learn about aquaculture, water quality
-            and smart water management.
-        </p>
-
-        <a href="Introduction.html" class="button">
-            Explore Now
-        </a>
-
-    </section>
-
-
-    
-
-    <section class="info">
- 
-        <h2>
-            Explore AquaNex
-        </h2>
-
-        <p>
-            Learn simple and useful information
-            about modern aquaculture.
-        </p>
-
-    </section>
-
->
-    
-
-    <section class="cards">
-
-        <div class="card">
-
-            <h3>🐟 Aquaculture</h3>
-
-            <p>
-                Learn about fish farming
-                and aquatic farming systems.
-            </p>
+            </div>
 
         </div>
 
 
-        <div class="card">
 
-            <h3>💧 Water Quality</h3>
+        <!-- PHOTO 3 -->
 
-            <p>
-                Learn about pH, oxygen,
-                temperature and ammonia.
-            </p>
+        <div
+            class="memory"
+            onclick="openPhoto('photo3.jpg')">
+
+            <img
+                src="photo3.jpg"
+                alt="Our memory">
+
+            <div class="memory-caption">
+
+                😂 Good times
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PHOTO 4 -->
+
+        <div
+            class="memory"
+            onclick="openPhoto('photo4.jpg')">
+
+            <img
+                src="photo4.jpg"
+                alt="Our memory">
+
+            <div class="memory-caption">
+
+                🫶 Forever memories
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+
+        💌 A Message For You
+
+    </h2>
+
+
+    <div class="message-box">
+
+        You are not just my best friend —
+
+        you are a part of some of my
+
+        <span class="pink">
+
+            best memories
+
+        </span>.
+
+        🤍
+
+        <br><br>
+
+
+        We've laughed, travelled,
+
+        taken countless photos
+
+        and created moments
+
+        that I hope we will talk
+
+        about even years from now.
+
+        <br><br>
+
+
+        May this new year of your life
+
+        bring you success, happiness,
+
+        peace and everything you've
+
+        been wishing for. ✨
+
+        <br><br>
+
+
+        <b>
+
+            Happy Birthday once again,
+
+            Jubu! 🎂💖
+
+        </b>
+
+    </div>
+
+
+
+    <!-- CAKE -->
+
+    <div class="cake-section">
+
+
+        <div class="cake">
+
+
+            <div class="candles">
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="cream"></div>
+
+
+            <div class="cake-text">
+
+                Have a wonderful year ahead! 💗
+
+            </div>
 
         </div>
 
 
-        <div class="card">
+        <button
+            class="main-button"
+            onclick="showSurprise()">
 
-            <h3>📊 Calculation</h3>
+            🎁 Open Your Surprise
 
-            <p>
-                Calculate pond volume,
-                stocking and feed requirements.
-            </p>
-
-        </div>
-
-    </section>
+        </button>
 
 
-    
+    </div>
 
-    <footer>
 
-        <h3>AquaNex</h3>
 
-        <p>
-            Team: Blue Dragon
-        </p>
+    <!-- SURPRISE -->
 
-        <p>
-            Md. Abu Jahid Jim & Mariam Akter Bristy
-        </p>
+    <div id="surprise">
 
-        <p>
-            ©️ 2026 AquaNex
-        </p>
+        🎉 <b>Surprise! 🎉</b>
 
-    </footer>
+        <br><br>
+
+
+        If life is a journey,
+
+        I'm glad some of my
+
+        favourite chapters
+
+        have you in them. 🤍
+
+        <br><br>
+
+
+        Keep smiling,
+
+        keep dreaming,
+
+        and keep being the
+
+        amazing person you are.
+
+        <br><br>
+
+
+        <span class="pink">
+
+            Happy Birthday, Jubu!
+
+            🎂💖✨
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Made with
+
+    <b>❤️</b>
+
+    specially for my best friend Jubu
+
+</footer>
+
+
+
+<!-- =========================
+     PHOTO POPUP
+========================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closePhoto()">
+
+
+    <span class="close">
+
+        ×
+
+    </span>
+
+
+    <img
+        id="largePhoto"
+        src=""
+        alt="Memory">
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   BIRTHDAY SONG
+========================= */
+
+function openBirthdaySong() {
+
+    window.open(
+        "https://share.google/DXwxdm8VqSUDY5BOM",
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================
+   SCROLL TO MEMORIES
+========================= */
+
+function scrollToMemories() {
+
+    document
+        .getElementById("memories")
+        .scrollIntoView();
+
+}
+
+
+
+/* =========================
+   PHOTO POPUP
+========================= */
+
+function openPhoto(photo) {
+
+    document
+        .getElementById("largePhoto")
+        .src = photo;
+
+    document
+        .getElementById("lightbox")
+        .style.display = "flex";
+
+}
+
+
+function closePhoto() {
+
+    document
+        .getElementById("lightbox")
+        .style.display = "none";
+
+}
+
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+function showSurprise() {
+
+    document
+        .getElementById("surprise")
+        .style.display = "block";
+
+
+    /*
+       Create celebration emojis
+    */
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        let heart =
+            document.createElement("div");
+
+
+        heart.innerHTML =
+            [
+                "💖",
+                "🤍",
+                "🎉",
+                "✨",
+                "🌸",
+                "🎂"
+            ][
+                Math.floor(
+                    Math.random() * 6
+                )
+            ];
+
+
+        heart.style.position =
+            "fixed";
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.bottom =
+            "-30px";
+
+
+        heart.style.fontSize =
+            20 + Math.random() * 25
+            + "px";
+
+
+        heart.style.zIndex = "200";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        heart.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) rotate(0)",
+
+                    opacity: 1
+                },
+
+                {
+                    transform:
+                        "translateY(-110vh) rotate(720deg)",
+
+                    opacity: 0
+                }
+
+            ],
+
+            {
+
+                duration:
+                    2500 +
+                    Math.random() * 2500,
+
+                easing:
+                    "ease-out"
+
+            }
+
+        );
+
+
+        setTimeout(
+            () => heart.remove(),
+            5500
+        );
+
+    }
+
+}
+
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+const canvas =
+    document.getElementById(
+        "fireworks"
+    );
+
+const ctx =
+    canvas.getContext("2d");
+
+
+let width;
+let height;
+
+let particles = [];
+
+
+function resizeCanvas() {
+
+    width =
+        canvas.width =
+        window.innerWidth;
+
+    height =
+        canvas.height =
+        window.innerHeight;
+
+}
+
+
+resizeCanvas();
+
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+
+function createFirework(
+    x,
+    y
+) {
+
+    for (
+        let i = 0;
+        i < 60;
+        i++
+    ) {
+
+        const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+        const speed =
+            1 +
+            Math.random() * 5;
+
+
+        particles.push({
+
+            x: x,
+
+            y: y,
+
+            vx:
+                Math.cos(angle)
+                * speed,
+
+            vy:
+                Math.sin(angle)
+                * speed,
+
+            life:
+                70 +
+                Math.random() * 40,
+
+            color:
+                `hsl(${
+                    Math.random() * 360
+                },100%,70%)`
+
+        });
+
+    }
+
+}
+
+
+
+setInterval(
+
+    function() {
+
+        createFirework(
+
+            Math.random() *
+            width,
+
+            100 +
+            Math.random() *
+            height * .4
+
+        );
+
+    },
+
+    1000
+
+);
+
+
+
+function animateFireworks() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+
+    particles =
+        particles.filter(
+            particle =>
+                particle.life > 0
+        );
+
+
+    particles.forEach(
+        particle => {
+
+            particle.x +=
+                particle.vx;
+
+
+            particle.y +=
+                particle.vy;
+
+
+            particle.vy +=
+                0.04;
+
+
+            particle.life--;
+
+
+            ctx.fillStyle =
+                particle.color;
+
+
+            ctx.globalAlpha =
+                particle.life / 100;
+
+
+            ctx.fillRect(
+                particle.x,
+                particle.y,
+                3,
+                3
+            );
+
+        }
+    );
+
+
+    ctx.globalAlpha = 1;
+
+
+    requestAnimationFrame(
+        animateFireworks
+    );
+
+}
+
+
+animateFireworks();
+
+</script>
 
 
 </body>
